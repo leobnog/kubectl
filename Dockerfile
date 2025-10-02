@@ -1,3 +1,6 @@
 FROM alpine:3.18
-RUN apk add --no-cache kubectl bash curl git
-CMD ["/bin/bash"]
+
+# Instala kubectl e ferramentas úteis
+RUN apk add --no-cache \
+    kubectl \
+    && rm -rf /var/cache/apk/*
